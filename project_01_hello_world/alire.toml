@@ -1,0 +1,11 @@
+name = "project_01_hello_world"
+description = "A short practice of writing a code file that prints \"hello, world!\""
+version = "0.1.0-dev"
+
+authors = ["Little Hippo"]
+maintainers = ["Little Hippo <example@example.com>"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+executables = ["project_01_hello_world"]
