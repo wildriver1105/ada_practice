@@ -15,6 +15,12 @@ project Project_01_Hello_World is
       for Switches ("Ada") use ("-Es"); --  Symbolic traceback
    end Binder;
 
+   package Linker is
+      for Switches ("Ada") use
+         ("-Wl,-syslibroot," & External ("SDKROOT", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"),
+          "-lSystem");
+   end Linker;
+
    package Install is
       for Artifacts (".") use ("share");
    end Install;
