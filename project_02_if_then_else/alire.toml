@@ -1,0 +1,11 @@
+name = "project_02_if_then_else"
+description = "A simple practice of conditional statement with ada"
+version = "0.1.0-dev"
+
+authors = ["Little Hippo"]
+maintainers = ["Little Hippo <example@example.com>"]
+licenses = "MIT"
+website = ""
+tags = []
+
+executables = ["project_02_if_then_else"]

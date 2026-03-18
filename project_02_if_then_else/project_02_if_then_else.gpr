@@ -1,0 +1,28 @@
+with "config/project_02_if_then_else_config.gpr";
+project Project_02_If_Then_Else is
+
+   for Source_Dirs use ("src/", "config/");
+   for Object_Dir use "obj/" & Project_02_If_Then_Else_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use ("project_02_if_then_else.adb");
+
+   package Compiler is
+      for Default_Switches ("Ada") use Project_02_If_Then_Else_Config.Ada_Compiler_Switches;
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+
+   package Linker is
+      for Switches ("Ada") use
+         ("-Wl,-syslibroot," & External ("SDKROOT", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"),
+         "-lSystem");
+   end Linker;
+
+end Project_02_If_Then_Else;
